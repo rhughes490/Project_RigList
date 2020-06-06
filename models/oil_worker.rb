@@ -46,5 +46,13 @@ class Oil_worker
         results = SqlRunner.run(sql, values)
         return results.map { |rig| Rig.new(rig) }
       end
+    
+      def self.find( id )
+        sql = "SELECT * FROM oil_workers
+        WHERE id = $1"
+        values = [id]
+        results = SqlRunner.run( sql, values )
+        return Oil_worker.new( results.first )
+      end
 
 end
