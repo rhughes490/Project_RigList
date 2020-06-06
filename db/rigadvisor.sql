@@ -21,5 +21,6 @@ CREATE TABLE flights (
   id SERIAL PRIMARY KEY,
   oil_worker_id INT REFERENCES oil_workers(id) ON DELETE CASCADE,
   rig_id INT REFERENCES rigs(id) ON DELETE CASCADE,
+  date VARCHAR(255),
   status TEXT
 );

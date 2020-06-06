@@ -34,7 +34,7 @@ class Flight
   end
 
   def self.delete_all()
-    sql = "DELETE FROM flightss"
+    sql = "DELETE FROM flights"
     SqlRunner.run(sql)
    end
 
