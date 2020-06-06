@@ -1,5 +1,6 @@
 DROP TABLE flights;
 DROP TABLE oil_workers;
+DROP TABLE oil_companys;
 DROP TABLE rigs;
 
 CREATE TABLE oil_workers (
@@ -21,6 +22,12 @@ CREATE TABLE flights (
   id SERIAL PRIMARY KEY,
   oil_worker_id INT REFERENCES oil_workers(id) ON DELETE CASCADE,
   rig_id INT REFERENCES rigs(id) ON DELETE CASCADE,
-  date VARCHAR(255),
-  status TEXT
+  date VARCHAR(255)
+);
+
+CREATE TABLE oil_companys (
+  id SERIAL PRIMARY KEY,
+  rig_id INT REFERENCES rigs(id) ON DELETE CASCADE,
+  name VARCHAR(255),
+  type VARCHAR(255)
 );
