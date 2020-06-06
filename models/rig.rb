@@ -49,12 +49,12 @@ def oil_workers
     return results.map { |oil_worker| Oil_worker.new(oil_worker) }
 end
 
-#   def self.find( id )
-#     sql = "SELECT * FROM oil_workers
-#     WHERE id = $1"
-#     values = [id]
-#     results = SqlRunner.run( sql, values )
-#     return Oil_worker.new( results.first )
-#   end
+  def self.find( id )
+    sql = "SELECT * FROM rigs
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Rig.new( results.first )
+  end
 
 end
