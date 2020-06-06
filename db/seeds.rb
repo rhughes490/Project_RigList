@@ -58,3 +58,6 @@ flight11 = Flight.new({ 'oil_worker_id' => oil_worker6.id, 'rig_id' => rig5.id, 
 flight11.save()
 flight12 = Flight.new({ 'oil_worker_id' => oil_worker6.id, 'rig_id' => rig4.id, 'date' => '07 October 2020'})
 flight12.save()
+
+binding.pry
+nil
