@@ -7,7 +7,9 @@ class Oil_worker
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @first_name = options['first_name']
+    @last_name = options['last_name']
+    @contact_num = options['contact_num']
   end
 
   def save()

@@ -1,6 +1,6 @@
-require_relative( '../models/oil_worker' )
-require_relative( '../models/rig' )
-require_relative( '../models/flight' )
+require_relative( '../models/oil_worker.rb' )
+require_relative( '../models/rig.rb' )
+require_relative( '../models/flight.rb' )
 
 require( 'pry-byebug' )
 
@@ -21,6 +21,8 @@ oil_worker5.save()
 oil_worker6 = Oil_worker.new({ 'first_name' => 'Eli', 'last_name' => 'Sunday', 'contact_num' => '077023845903'})
 oil_worker6.save()
 
+binding.pry
+
 rig1 = Rig.new({ 'name' => 'Nelson', 'type' => 'Platform', 'distance' => '120', 'country' => 'UK'})
 rig1.save()
 rig2 = Rig.new({ 'name' => 'Shearwater', 'type' => 'Platform', 'distance' => '100', 'country' => 'UK'})
@@ -33,6 +35,8 @@ rig5 = Rig.new({ 'name' => 'Heidrun', 'type' => 'TLP', 'distance' => '150', 'cou
 rig5.save()
 rig6 = Rig.new({ 'name' => 'F16-A', 'type' => 'Platform', 'distance' => '50', 'country' => 'Netherlands'})
 rig6.save()
+
+binding.pry
 
 flight1 = Flight.new({ 'oil_worker_id' => oil_worker1.id, 'rig_id' => rig1.id, 'date' => '13 December 2015', 'status' => 'Previous'})
 flight1.save()

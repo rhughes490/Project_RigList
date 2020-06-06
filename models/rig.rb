@@ -8,7 +8,7 @@ class Rig
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @category = options['category']
+    @type = options['type']
     @distance = options['distance']
     @country = options['country']
   end

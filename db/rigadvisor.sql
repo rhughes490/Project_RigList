@@ -6,7 +6,7 @@ CREATE TABLE oil_workers (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  contact_num INT
+  contact_num VARCHAR(255)
 );
 
 CREATE TABLE rigs (
