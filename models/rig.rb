@@ -13,6 +13,22 @@ class Rig
     @country = options['country']
   end
 
-  
+  def save()
+    sql = "INSERT INTO rigs
+    (
+      name,
+      type,
+      distance,
+      country
+    )
+    VALUES
+    (
+      $1, $2, $3, $4
+    )
+    RETURNING id"
+    values = [@name, @type, @distance, @country]
+    location = SqlRunner.run( sql, values ).first
+    @id = rig['id'].to_i
+  end
 
 end
