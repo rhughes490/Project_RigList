@@ -31,4 +31,9 @@ class Rig
     @id = rig['id'].to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM rigs"
+    SqlRunner.run(sql)
+   end
+
 end
