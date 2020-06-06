@@ -42,4 +42,20 @@ class Flight
     return results.map { |flight| Flight.new( flight ) }
   end
 
+  def oil_worker()
+    sql = "SELECT * FROM oil_workers
+    WHERE id = $1"
+    values = [@oil_worker_id]
+    results = SqlRunner.run( sql, values )
+    return Oil_worker.new( results.first )
+  end
+
+  def rig()
+    sql = "SELECT * FROM rigs
+    WHERE id = $1"
+    values = [@rig_id]
+    results = SqlRunner.run( sql, values )
+    return Rig.new( results.first )
+  end
+
 end
