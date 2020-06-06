@@ -42,12 +42,12 @@ class Rig
     return results.map { |hash| Rig.new( hash ) }
 end
 
-# def rigs
-#     sql = "SELECT rig.* FROM rigs rig INNER JOIN flights flight ON flight.rig_id = rig.id WHERE flight.oil_worker_id = $1;"
-#     values = [@id]
-#     results = SqlRunner.run(sql, values)
-#     return results.map { |rig| Rig.new(rig) }
-#   end
+def oil_workers
+    sql = "SELECT oil_worker.* FROM oil_workers oil_worker INNER JOIN flights flight ON flight.oil_worker_id = oil_worker.id WHERE flight.rig_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |oil_worker| Oil_worker.new(oil_worker) }
+end
 
 #   def self.find( id )
 #     sql = "SELECT * FROM oil_workers
