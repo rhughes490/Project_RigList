@@ -27,7 +27,7 @@ class Rig
     )
     RETURNING id"
     values = [@name, @type, @distance, @country]
-    location = SqlRunner.run( sql, values ).first
+    rig = SqlRunner.run( sql, values ).first
     @id = rig['id'].to_i
   end
 
