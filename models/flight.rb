@@ -58,4 +58,11 @@ class Flight
     return Rig.new( results.first )
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM flights
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
 end
