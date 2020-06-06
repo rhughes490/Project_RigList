@@ -27,4 +27,9 @@ class Oil_worker
     @id = oil_worker['id'].to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM oil_workers"
+    SqlRunner.run(sql)
+   end
+
 end
