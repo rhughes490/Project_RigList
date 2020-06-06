@@ -36,4 +36,25 @@ class Rig
     SqlRunner.run(sql)
    end
 
+   def self.all()
+    sql = "SELECT * FROM rigs"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Rig.new( hash ) }
+end
+
+# def rigs
+#     sql = "SELECT rig.* FROM rigs rig INNER JOIN flights flight ON flight.rig_id = rig.id WHERE flight.oil_worker_id = $1;"
+#     values = [@id]
+#     results = SqlRunner.run(sql, values)
+#     return results.map { |rig| Rig.new(rig) }
+#   end
+
+#   def self.find( id )
+#     sql = "SELECT * FROM oil_workers
+#     WHERE id = $1"
+#     values = [id]
+#     results = SqlRunner.run( sql, values )
+#     return Oil_worker.new( results.first )
+#   end
+
 end
