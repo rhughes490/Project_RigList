@@ -36,4 +36,10 @@ class Flight
     SqlRunner.run(sql)
    end
 
+   def self.all()
+    sql = "SELECT * FROM flights"
+    results = SqlRunner.run( sql )
+    return results.map { |flight| Flight.new( flight ) }
+  end
+
 end
