@@ -15,6 +15,22 @@ class Flight
     @status = options ['status']
   end
 
-
+  def save()
+    sql = "INSERT INTO flights
+    (
+      oil_worker_id,
+      rig_id,
+      date,
+      status
+    )
+    VALUES
+    (
+      $1, $2, $3, $4
+    )
+    RETURNING id"
+    values = [@oil_worker_id, @rig_id, @date, @status]
+    flight = SqlRunner.run( sql,values ).first
+    @id = flight['id'].to_i
+  end
 
 end
