@@ -1,0 +1,24 @@
+<h1>Rigs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Distance</th>
+    <th></th>
+    <th>Country</th>
+  </tr>
+  <% for rig in @rigs %>
+  <tr>
+    <td><a href="/rigs/<%= rig.id %>"><%= rig.name %></a></td>
+    <td>|</td>
+    <td><%= rig.type %></td>
+    <td>|</td>
+    <td><%= rig.distance %></td>
+    <td>|</td>
+    <td><%= rig.country %></td>
+  </tr>
+  <% end %>
+</table>
