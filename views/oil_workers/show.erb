@@ -1,0 +1,11 @@
+<h1><%= @oil_worker.first_name %> (oil_worker)</h1>
+
+<p>Contact Number: <%= @oil_worker.contact_num %></p>
+
+<h3>Went to</h3>
+
+<ul>
+  <% @oil_worker.rig.each do |rig| %>
+  <li><%= rig.name %></li>
+  <% end %>
+</ul>
