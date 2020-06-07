@@ -7,7 +7,7 @@
 <ul>
   <% for flight in @flights %>
   <li>
-  <p><%= flight.rig.name %> <%= @actions.sample %> <%= flight.oil_worker.name %> </p>
+  <p> <%= flight.oil_worker.first_name %> <%= flight.oil_worker.last_name %> <%= @actions.sample %> <%= flight.rig.name %> </p>
     <p>
       <form action="/flights/<%= flight.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />

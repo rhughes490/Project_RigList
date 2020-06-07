@@ -14,7 +14,7 @@
     Select a oil worker:
     <select name="oil_worker_id">
       <% for oil_worker in @oil_workers %>
-      <option value="<%= oil_worker.id %>"><%= oil_worker.first_name %> <%= oil_worker.lasst_name %></option>
+      <option value="<%= oil_worker.id %>"><%= oil_worker.first_name %> <%= oil_worker.last_name %></option>
       <% end %>
     </select>
   </label>
