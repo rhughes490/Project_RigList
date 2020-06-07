@@ -1,0 +1,23 @@
+<h1>Record or Book a flight</h1>
+
+<form action="/flights" method="post">
+  <label>
+  Select a rig:
+    <select name="rig_id">
+      <% for rig in @rigs %>
+      <option value="<%= rig.id %>"><%= rig.name %></option>
+      <% end %>
+    </select>
+  </label>
+  
+  <label>
+    Select a oil worker:
+    <select name="oil_worker_id">
+      <% for oil_worker in @oil_workers %>
+      <option value="<%= oil_worker.id %>"><%= oil_worker.first_name %> <%= oil_worker.lasst_name %></option>
+      <% end %>
+    </select>
+  </label>
+  
+  <input class="btn btn--action" type='submit' value="book">
+</form>
