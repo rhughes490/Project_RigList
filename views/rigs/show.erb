@@ -1,0 +1,11 @@
+<h1>Rig <%= @rig.name %></h1>
+
+<p>Type: <%= @rig.type %></p>
+
+<h3>Oil Workers:</h3>
+
+<ul>
+  <% @rig.oil_workers.each do |oil_worker| %>
+  <li><%= oil_worker.first_name %> &nbsp; <%= oil_worker.last_name %></li>
+  <% end %>
+</ul>
