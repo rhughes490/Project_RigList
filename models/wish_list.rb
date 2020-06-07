@@ -2,10 +2,10 @@ require_relative("../db/sql_runner")
 require_relative("oil_worker")
 require_relative("rig")
 
-class Wish_List
+class Wish_list
 
   attr_reader :id
-  attr_accessor :oil_worker_id, :rig_id,
+  attr_accessor :oil_worker_id, :rig_id
 
   def initialize( options )
     @id = options['id'].to_i if options['id']

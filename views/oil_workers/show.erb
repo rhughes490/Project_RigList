@@ -5,3 +5,18 @@
   <li><%= rig.name %></li>
   <% end %>
 </ul>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/flights/new">Record a previous flight</a>
+</p>
+
+<h1><%= @oil_worker.first_name %> <%= @oil_worker.last_name %> wants to go to: </h1>
+
+<ul>
+  <% @oil_worker.wish_rigs.each do |wish_rig| %>
+  <li><%= wish_rig.name %></li>
+  <% end %>
+</ul>
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/wish_lists/new">Add rig to wish list</a>
+</p>

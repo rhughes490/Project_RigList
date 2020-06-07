@@ -4,12 +4,10 @@ require( 'pry-byebug' )
 require_relative( '../models/flight.rb' )
 require_relative( '../models/oil_worker.rb' )
 require_relative( '../models/rig.rb' )
-require_relative( '../models/action.rb' )
 also_reload( '../models/*' )
 
 get '/flights' do
   @flights = Flight.all
-  @actions = Action.all
   erb ( :"flights/index" )
 end
 
