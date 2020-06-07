@@ -32,4 +32,24 @@ class Oil_company
     SqlRunner.run(sql)
    end
 
+   def self.find(id)
+    sql = "SELECT * FROM oil_companys
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql ,values).first
+    oil_company = Oil_company.new(result)
+    return oil_company
+  end
+
+  def self.all()
+    sql = "SELECT * FROM oil_companys"
+    oil_company_data = SqlRunner.run(sql)
+    oil_companys = map_items(oil_company_data)
+    return oil_companys
+  end
+
+  def self.map_items(oil_company_data)
+    return oil_company_data.map { |oil_company| Oil_company.new(oil_company) }
+  end
+
 end
