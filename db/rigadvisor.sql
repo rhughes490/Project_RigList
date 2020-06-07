@@ -1,4 +1,5 @@
 DROP TABLE flights;
+DROP TABLE wish_lists;
 DROP TABLE oil_workers;
 DROP TABLE oil_companys;
 DROP TABLE rigs;
@@ -23,6 +24,12 @@ CREATE TABLE flights (
   oil_worker_id INT REFERENCES oil_workers(id) ON DELETE CASCADE,
   rig_id INT REFERENCES rigs(id) ON DELETE CASCADE,
   date VARCHAR(255)
+);
+
+CREATE TABLE wish_lists (
+  id SERIAL PRIMARY KEY,
+  oil_worker_id INT REFERENCES oil_workers(id) ON DELETE CASCADE,
+  rig_id INT REFERENCES rigs(id) ON DELETE CASCADE,
 );
 
 CREATE TABLE oil_companys (
