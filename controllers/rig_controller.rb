@@ -9,6 +9,6 @@ get '/rigs' do
 end
 
 get '/rigs/:id' do
-  @Rig = Rig.find(params['id'].to_i)
+  @rig = Rig.find(params['id'].to_i)
   erb(:"rigs/show")
 end

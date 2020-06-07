@@ -1,0 +1,18 @@
+<h1>Flights</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/flights/new">New flight</a>
+</p>
+
+<ul>
+  <% for flight in @flights %>
+  <li>
+  <p><%= flight.rig.name %> <%= @actions.sample %> <%= flight.oil_worker.name %> </p>
+    <p>
+      <form action="/flights/<%= flight.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ul>
