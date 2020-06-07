@@ -29,7 +29,7 @@ CREATE TABLE flights (
 CREATE TABLE wish_lists (
   id SERIAL PRIMARY KEY,
   oil_worker_id INT REFERENCES oil_workers(id) ON DELETE CASCADE,
-  rig_id INT REFERENCES rigs(id) ON DELETE CASCADE,
+  rig_id INT REFERENCES rigs(id) ON DELETE CASCADE
 );
 
 CREATE TABLE oil_companys (

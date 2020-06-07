@@ -14,31 +14,30 @@ class Wish_List
   end
 
   def save()
-    sql = "INSERT INTO flights
+    sql = "INSERT INTO wish_lists
     (
       oil_worker_id,
-      rig_id,
-      date
+      rig_id
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2
     )
     RETURNING id"
-    values = [@oil_worker_id, @rig_id, @date]
-    flight = SqlRunner.run( sql,values ).first
-    @id = flight['id'].to_i
+    values = [@oil_worker_id, @rig_id]
+    wish_list = SqlRunner.run( sql,values ).first
+    @id = wish_list['id'].to_i
   end
 
   def self.delete_all()
-    sql = "DELETE FROM flights"
+    sql = "DELETE FROM wish_lists"
     SqlRunner.run(sql)
    end
 
    def self.all()
-    sql = "SELECT * FROM flights"
+    sql = "SELECT * FROM wish_lists"
     results = SqlRunner.run( sql )
-    return results.map { |flight| Flight.new( flight ) }
+    return results.map { |wish_list| Wish_list.new( wish_list ) }
   end
 
   def oil_worker()
@@ -58,7 +57,7 @@ class Wish_List
   end
 
   def self.delete(id)
-    sql = "DELETE FROM flights
+    sql = "DELETE FROM wish_lists
     WHERE id = $1"
     values = [id]
     SqlRunner.run( sql, values )
