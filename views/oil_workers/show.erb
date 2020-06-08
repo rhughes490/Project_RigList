@@ -14,7 +14,7 @@
 
 <ul>
   <% @oil_worker.wish_rigs.each do |wish_rig| %>
-  <%= wish_rig.rig.name %>&nbsp;
+    <li><%= wish_rig.rig.name %> </li>
       <form action="/wish_lists/<%= wish_rig.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="Delete" />
       </form>

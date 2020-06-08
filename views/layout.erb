@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RigAdvisor - RigList</title>
+  <head>
+    <title>RigAdvisor - RigList</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/images/Logo3.JPG" />
+  </head>
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-  
-  <link rel="icon" href="/images/Logo3.JPG" />
+  <body>
+    <header>
+      <nav>
+          <a href="/">
+          <img alt="Logo" src="/images/Logo3.JPG"
+          width=70" height="70"></a>
 
-</head>
-<body>
-<main class="flex flex--column">
-  <nav>
-    <ul>
-      <li>
-        <a href="/rigs">Rigs</a>
-      </li>
-      <li>
-        <a href="/oil_workers">Oil Workers</a>
-      </li>
-      <li>
-        <a href="/flights">Flight Tracker</a>
-      </li>
-      <li>
-        <a href="/wish_lists">Wish List</a>
-      </li>
-    </ul>
-  </nav>
-  <section id="content">
-  <%= yield %>
-  </section>
-  </main>
-</body>
+          <a href="/rigs">Rigs</a>
+
+          <a href="/oil_workers">Oil Workers</a>
+
+          <a href="/flights">Flight Tracker</a>
+
+          <a href="/oil_companys">Oil Companies</a>
+
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
 </html>

@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner")
+require_relative("rig")
 
 class Oil_company
 
@@ -31,6 +32,14 @@ class Oil_company
     sql = "DELETE FROM oil_companys"
     SqlRunner.run(sql)
    end
+
+   def rig()
+    sql = "SELECT * FROM rigs
+    WHERE id = $1"
+    values = [@rig_id]
+    results = SqlRunner.run( sql, values )
+    return Rig.new( results.first )
+  end
 
    def self.find(id)
     sql = "SELECT * FROM oil_companys

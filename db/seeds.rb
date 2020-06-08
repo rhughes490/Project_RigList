@@ -1,11 +1,14 @@
 require_relative( '../models/oil_worker.rb' )
 require_relative( '../models/wish_list.rb' )
 require_relative( '../models/rig.rb' )
+require_relative( '../models/oil_company.rb')
 require_relative( '../models/flight.rb' )
 
 require( 'pry-byebug' )
 
 Flight.delete_all()
+Wish_list.delete_all()
+Oil_company.delete_all()
 Rig.delete_all()
 Oil_worker.delete_all()
 
@@ -90,6 +93,18 @@ wish_list10 = Wish_list.new({ 'oil_worker_id' => oil_worker6.id, 'rig_id' => rig
 wish_list10.save()
 wish_list11 = Wish_list.new({ 'oil_worker_id' => oil_worker6.id, 'rig_id' => rig6.id})
 wish_list11.save()
+
+oil_company1 = Oil_company.new({ 'name' => 'Shell', 'type' => 'Production'})
+oil_company1.save()
+oil_company2 = Oil_company.new({ 'name' => 'BP', 'type' => 'Production'})
+oil_company2.save()
+oil_company3 = Oil_company.new({ 'name' => 'Paragon', 'type' => 'Drilling'})
+oil_company3.save()
+oil_company4 = Oil_company.new({ 'name' => 'Equinor', 'type' => 'Producer'})
+oil_company4.save()
+oil_company5 = Oil_company.new({ 'name' => 'Valaris', 'type' => 'Drilling'})
+oil_company5.save()
+
 
 binding.pry
 nil

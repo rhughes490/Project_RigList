@@ -3,7 +3,7 @@ require_relative("../db/sql_runner")
 class Rig
 
   attr_reader :id
-  attr_accessor :name, :type, :distance, :country
+  attr_accessor :name, :type, :distance, :country, :oil_company_id
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -11,6 +11,7 @@ class Rig
     @type = options['type']
     @distance = options['distance']
     @country = options['country']
+    @oil_company = options['oil_company_id'].to_i
   end
 
   def save()
@@ -19,14 +20,15 @@ class Rig
       name,
       type,
       distance,
-      country
+      country,
+      oil_company_id
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@name, @type, @distance, @country]
+    values = [@name, @type, @distance, @country, @oil_company_id]
     rig = SqlRunner.run( sql, values ).first
     @id = rig['id'].to_i
   end

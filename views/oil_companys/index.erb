@@ -1,0 +1,20 @@
+<h1>Oil Companies</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/rigs/new">Add an Oil Company</a>
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Type</th>
+  </tr>
+  <% for oil_company in @oil_companys %>
+  <tr>
+    <td><a href="/oil_companys/<%= oil_company.id %>"><%= oil_company.name %></a></td>
+    <td>|</td>
+    <td><%= oil_company.type %></td>
+  </tr>
+  <% end %>
+</table>
