@@ -8,6 +8,15 @@ get '/oil_workers' do
   erb ( :"oil_workers/index" )
 end
 
+get '/oil_workers/new' do
+  erb(:"oil_workers/new")
+end
+
+post '/oil_workers' do
+oil_worker = Oil_worker.new(params).save
+redirect to "/oil_workers"
+end
+
 get '/oil_workers/:id' do
   @oil_worker = Oil_worker.find(params['id'].to_i)
   erb( :"oil_workers/show" )
