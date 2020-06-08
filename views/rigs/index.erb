@@ -13,6 +13,8 @@
     <th>Distance</th>
     <th></th>
     <th>Country</th>
+    <th></th>
+    <th>Oil Company</th>
   </tr>
   <% for rig in @rigs %>
   <tr>
@@ -23,6 +25,8 @@
     <td><%= rig.distance %> miles</td>
     <td>|</td>
     <td><%= rig.country %></td>
+    <td>|</td>
+    <td><%= rig.oil_company.name.capitalize %></td>
   </tr>
   <% end %>
 </table>

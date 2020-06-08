@@ -47,13 +47,6 @@ class Oil_worker
         return results.map { |rig| Rig.new(rig) }
       end
 
-      # def wish_rigs
-      #   sql = "SELECT rig.* FROM rigs rig INNER JOIN wish_lists wish_list ON wish_list.rig_id = rig.id WHERE wish_list.oil_worker_id = $1;"
-      #   values = [@id]
-      #   results = SqlRunner.run(sql, values)
-      #   return results.map { |rig| Rig.new(rig) }
-      # end
-
       def wish_rigs
         sql = "SELECT * FROM wish_lists where oil_worker_id = $1"
         values = [@id]

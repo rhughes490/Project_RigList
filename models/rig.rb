@@ -11,7 +11,7 @@ class Rig
     @type = options['type']
     @distance = options['distance']
     @country = options['country']
-    @oil_company = options['oil_company_id'].to_i
+    @oil_company_id = options['oil_company_id'].to_i
   end
 
   def save()
@@ -31,6 +31,11 @@ class Rig
     values = [@name, @type, @distance, @country, @oil_company_id]
     rig = SqlRunner.run( sql, values ).first
     @id = rig['id'].to_i
+  end
+
+  def oil_company()
+    oil_company = Oil_company.find(@oil_company_id)
+    return oil_company
   end
 
   def self.delete_all()

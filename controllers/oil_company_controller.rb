@@ -13,7 +13,7 @@ get '/oil_companys' do
 end
 
 get '/oil_companys/new' do
-  @oil_comapnys = Oil_company.all
+  @oil_companys = Oil_company.all
   erb(:"oil_companys/new")
 end
 

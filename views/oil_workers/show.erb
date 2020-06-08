@@ -2,7 +2,7 @@
 
 <ul>
   <% @oil_worker.rigs.each do |rig| %>
-  <li><%= rig.name %></li>
+     <p><a href="/rigs/<%= rig.id %>"><%= rig.name %></a></p>
   <% end %>
 </ul>
 
@@ -14,9 +14,10 @@
 
 <ul>
   <% @oil_worker.wish_rigs.each do |wish_rig| %>
-    <li><%= wish_rig.rig.name %> </li>
-      <form action="/wish_lists/<%= wish_rig.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="Delete" />
+    <form action="/wish_lists/<%= wish_rig.id %>/delete" method="POST">
+
+    <p><a href="/rigs/<%= wish_rig.rig.id %>"><%= wish_rig.rig.name %></a>
+    <input class="btn btn--danger" type="submit" value="Delete" /></p>
       </form>
   <% end %>
 </ul>

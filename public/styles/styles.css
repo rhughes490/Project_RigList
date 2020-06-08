@@ -1,5 +1,5 @@
 body {
-  background-image: url('images/riglist_background.jpg');
+  background-image: url('/images/riglist_background_whitened.png');
   background-size: 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -22,13 +22,13 @@ h2 {
 
 a, input[type="submit"] {
   display: inline-block;
-  background-color: #e15258;
-  color: #fff;
-  text-transform: uppercase;
+  background-color:limegreen;
+  color:black;
+  text-transform: none;
   font-weight: bold;
   font-size: 12px;
   text-decoration: none;
-  padding: 12px 20px;
+  padding: 10px 15px;
   border-radius: 100px;
   transition: background-color 200ms ease-in-out;
   letter-spacing: 0.05em;
@@ -40,7 +40,7 @@ a:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
-  background-color: #c3222a;
+  background-color: limegreen;
 }
 
 div + a,

@@ -13,13 +13,22 @@
     </div>
 
     <div class="form-el">
-      <label for="distance">Distance:</label>
+      <label for="distance">Distance (miles):</label>
       <input type="number" name="distance" id="distance"/>
     </div>
 
      <div class="form-el">
       <label for="country">Country:</label>
       <input type="text" name="country" id="country"/>
+    </div>
+
+        <div class="form-el">
+      <label for="oil_company_select">Select Oil Company:</label> 
+      <select name="oil_company_id" id="oil_company_select">
+        <% @oil_companys.each do |oil_company| %>
+            <option value=<%= oil_company.id %>><%= oil_company.name.capitalize %></option>
+        <% end %>
+      </select>
     </div>
 
     <div class="form-el">

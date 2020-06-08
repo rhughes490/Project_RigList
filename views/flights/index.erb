@@ -6,13 +6,11 @@
 
 <ul>
   <% for flight in @flights %>
-  <li>
   <p> <%= flight.oil_worker.first_name %> <%= flight.oil_worker.last_name %> has been on the <%= flight.rig.name %> </p>
     <p>
       <form action="/flights/<%= flight.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
     </p>
-  </li>
   <% end %>
 </ul>
