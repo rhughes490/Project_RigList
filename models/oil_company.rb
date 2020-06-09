@@ -28,6 +28,21 @@ class Oil_company
     @id = oil_company['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE oil_companys
+    SET
+    (
+      name,
+      type
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@name, @type, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM oil_companys"
     SqlRunner.run(sql)

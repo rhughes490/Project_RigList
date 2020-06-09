@@ -1,11 +1,3 @@
-<h1>Oil Company <%= @oil_company.name %></h1>
+<h1><%= @oil_company.name %></h1>
 
 <p>Type: <%= @oil_company.type %></p>
-
-<h3>Oil Companies:</h3>
-
-<ul>
-  <% @oil_company.rig.each do |rig| %>
-  <li><%= rig.name %></li>
-  <% end %>
-</ul>

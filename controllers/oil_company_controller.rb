@@ -17,9 +17,19 @@ get '/oil_companys/new' do
   erb(:"oil_companys/new")
 end
 
-get '/rigs/:id' do
-  @rig = Rig.find(params['id'].to_i)
-  erb(:"rigs/show")
+get '/oil_companys/upate' do
+  erb(:"oil_companys/update")
+end
+
+get '/oil_companys/:id' do
+  @oil_company = Oil_company.find(params['id'])
+  erb(:"oil_companys/show")
+end
+
+get '/oil_companys/:id/edit' do
+  @oil_companys = Oil_company.all
+  @oil_company = Oil_company.find(params['id'])
+  erb(:"oil_companys/update")
 end
 
 post '/oil_companys' do

@@ -12,9 +12,18 @@
   </tr>
   <% for oil_company in @oil_companys %>
   <tr>
-    <td><a href="/oil_companys/<%= oil_company.id %>"><%= oil_company.name %></a></td>
+      <td><a href="/oil_companys/<%= oil_company.id %>"><%= oil_company.name %></a></td>
     <td>|</td>
-    <td><%= oil_company.type %></td>
+      <td><%= oil_company.type %></td>
+    <td>|</td>
+    <td>::::::::::::::::::::</td>
+    
+        <td> <p> <form action="/oil_companys/<%= oil_company.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form> </p> </td>
+  
+   <td><a href="/oil_companys/update"</a></td>
+    
   </tr>
   <% end %>
 </table>
