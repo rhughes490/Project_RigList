@@ -15,14 +15,13 @@
       <td><a href="/oil_companys/<%= oil_company.id %>"><%= oil_company.name %></a></td>
     <td>|</td>
       <td><%= oil_company.type %></td>
-    <td>|</td>
-    <td>::::::::::::::::::::</td>
-    
+     <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
         <td> <p> <form action="/oil_companys/<%= oil_company.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
+        <input class="btn btn--danger" type="submit" value="Delete" />
       </form> </p> </td>
-  
-   <td><a href="/oil_companys/update"</a></td>
+
+      <td> <p> <a href="/oil_companys/<%= oil_company.id %>/update">Update</a> </p> </td>
+
     
   </tr>
   <% end %>

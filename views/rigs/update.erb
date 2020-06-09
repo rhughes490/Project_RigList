@@ -1,0 +1,44 @@
+<h2>Update <%= @rig.name %></h2>
+<form method="POST" action="/rigs/<%= @rig.id %>">
+  <div class="form-wrapper">
+    
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @rig.name %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type" value="<%= @rig.type%>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="distance">Distance:</label>
+      <input type="number" name="distance" id="distance" value="<%= @rig.distance %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="country">Country:</label>
+      <input type="text" name="country" id="country" value="<%= @rig.country %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="oil_company_select">Select Oil Company:</label> 
+      <select name="oil_company_id" id="oil_company_select" selected="<%= @rig.oil_company_id  %>">
+        <% @oil_companys.each do |oil_company| %>
+          <% if oil_company.id == @rig.oil_company_id %>
+            <option value=<%= oil_company.id %> selected><%= oil_company.name.capitalize %></option>
+          <% else %>
+            <option value=<%= oil_company.id %>><%= oil_company.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+    
+
+    <div class="form-el">
+      <input type="submit" value="Update Rig Details"/>
+    </div>
+
+  </div>
+</form>s

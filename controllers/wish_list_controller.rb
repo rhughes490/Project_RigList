@@ -20,10 +20,10 @@ end
 post '/wish_lists' do
   wish_list = Wish_list.new(params)
   wish_list.save
-  redirect to("/wish_lists")
+  redirect to("/oil_workers")
 end
 
 post '/wish_lists/:id/delete' do
   Wish_list.delete(params[:id])
-  redirect to("/wish_lists")
+  redirect to("/oil_workers")
 end

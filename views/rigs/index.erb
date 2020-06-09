@@ -27,6 +27,13 @@
     <td><%= rig.country %></td>
     <td>|</td>
     <td><%= rig.oil_company.name.capitalize %></td>
+    <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+    <td> <p> <a href="/rigs/<%= rig.id %>/update">Update</a> </p> </td>
+    <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+    <td> <p> <form action="/rigs/<%= rig.id %>/delete" method="POST">
+                <input class="btn btn--danger" type="submit" value="Delete" />
+            </form> </p> 
+    </td>
   </tr>
   <% end %>
 </table>

@@ -20,7 +20,25 @@ get '/rigs/:id' do
   erb(:"rigs/show")
 end
 
+get '/rigs/:id/update' do
+  @rigs = Rig.all
+  @oil_companys = Oil_company.all()
+  @rig = Rig.find(params['id'])
+  erb(:"rigs/update")
+end
+
 post '/rigs' do
   rigs = Rig.new(params).save
   redirect to '/rigs'
+end
+
+post '/rigs/:id' do
+  rig = Rig.new(params)
+  rig.update
+  redirect to "/rigs"
+end
+
+post '/rigs/:id/delete' do
+  Rig.delete(params[:id])
+  redirect to("/rigs")
 end

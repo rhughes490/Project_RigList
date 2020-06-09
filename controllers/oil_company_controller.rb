@@ -17,16 +17,12 @@ get '/oil_companys/new' do
   erb(:"oil_companys/new")
 end
 
-get '/oil_companys/upate' do
-  erb(:"oil_companys/update")
-end
-
 get '/oil_companys/:id' do
   @oil_company = Oil_company.find(params['id'])
   erb(:"oil_companys/show")
 end
 
-get '/oil_companys/:id/edit' do
+get '/oil_companys/:id/update' do
   @oil_companys = Oil_company.all
   @oil_company = Oil_company.find(params['id'])
   erb(:"oil_companys/update")
@@ -36,6 +32,12 @@ post '/oil_companys' do
   oil_company = Oil_company.new(params)
   oil_company.save
   redirect to("/oil_companys")
+end
+
+post '/oil_companys/:id' do
+  oil_company = Oil_company.new(params)
+  oil_company.update
+  redirect to "/oil_companys/#{params['id']}"
 end
 
 post '/oil_companys/:id/delete' do

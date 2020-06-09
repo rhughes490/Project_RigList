@@ -33,6 +33,24 @@ class Rig
     @id = rig['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE rigs
+    SET
+    (
+      name,
+      type,
+      distance,
+      country,
+      oil_company_id
+    ) =
+    (
+      $1, $2, $3, $4, $5
+    )
+    WHERE id = $6"
+    values = [@name, @type, @distance, @country, @oil_company_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def oil_company()
     oil_company = Oil_company.find(@oil_company_id)
     return oil_company
