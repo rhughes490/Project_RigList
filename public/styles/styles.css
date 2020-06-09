@@ -29,6 +29,20 @@ h2 {
   color: black;
 }
 
+h3 {
+  display: inline-block;
+  color:black;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+  letter-spacing: 0.05em;
+  border: none;
+}
+
 a, input[type="submit"] {
   display: inline-block;
   background-color: whitesmoke;
