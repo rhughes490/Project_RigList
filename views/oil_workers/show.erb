@@ -13,7 +13,7 @@
 <h3>
   <%= @oil_worker.first_name %> has travelled
   <% @oil_worker.rigs.each do |rig| %>
-     <%total_distance =+ rig.distance %>
+     <%total_distance = total_distance + rig.distance %>
        <%=total_distance%> miles
   <% end %>
 </h3>
