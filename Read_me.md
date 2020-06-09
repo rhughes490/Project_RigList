@@ -16,4 +16,4 @@ Add sights to the destination cities
 Search for destination by continent, city or country
 Any other ideas you might come up with
 
-I decided to ammend it to a tracker for oilfield workers were a rig is the equivalent to a city, an oil company is the equivalent to a country and a country is the equivalent to a continent. I made harder by giving the app the functionality to deal with multiple users and different types of users. Not only can the traveller (oil_worker) changed his Bucket list but the oil companies and rigs can changed their details when needed.
+I decided to ammend it to a tracker for oilfield workers were a rig is the equivalent to a city, an oil company is the equivalent to a country and a country is the equivalent to a continent. I made harder by giving the app the functionality to deal with multiple users and different types of users. Not only can the traveller (oil_worker) changed his Bucket list(flight list and wish list) but the oil companies and rigs can changed their details when needed.
