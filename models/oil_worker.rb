@@ -47,17 +47,6 @@ class Oil_worker
         return results.map { |rig| Rig.new(rig) }
       end
 
-      def distance_travelled
-        sql = "SELECT rig.* FROM rigs rig INNER JOIN flights flight ON flight.rig_id = rig.id WHERE flight.oil_worker_id = $1;"
-        values = [@id]
-        results = SqlRunner.run(sql, values)
-        rigs = results.map { |rig| Rig.new(rig) }
-        for rig in rigs
-         distance_travelled += rig.distance
-        end
-        return distance_travelled
-      end
-
       def wish_rigs
         sql = "SELECT * FROM wish_lists where oil_worker_id = $1"
         values = [@id]

@@ -10,4 +10,12 @@
   <a class="btn btn--click" href="/flights/new">Record a flight</a>
 </p>
 
+<h3>
+  <%= @oil_worker.first_name %> has travelled
+  <% @oil_worker.rigs.each do |rig| %>
+     <%total_distance =+ rig.distance %>
+       <%=total_distance%> miles
+  <% end %>
+</h3>
+
 <p> <a href="/oil_workers/<%= @oil_worker.id %>/wish_list">Wish List</a> </p>
