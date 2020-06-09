@@ -7,20 +7,7 @@
 </ul>
 
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/flights/new">Record a previous flight</a>
+  <a class="btn btn--click" href="/flights/new">Record a flight</a>
 </p>
 
-<h1><%= @oil_worker.first_name %> <%= @oil_worker.last_name %> wants to go to: </h1>
-
-<ul>
-  <% @oil_worker.wish_rigs.each do |wish_rig| %>
-    <form action="/wish_lists/<%= wish_rig.id %>/delete" method="POST">
-
-    <p><a href="/rigs/<%= wish_rig.rig.id %>"><%= wish_rig.rig.name %></a>
-    <input class="btn btn--danger" type="submit" value="Delete" /></p>
-      </form>
-  <% end %>
-</ul>
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/wish_lists/new">Add rig to wish list</a>
-</p>
+<p> <a href="/oil_workers/<%= @oil_worker.id %>/wish_list">Wish List</a> </p>

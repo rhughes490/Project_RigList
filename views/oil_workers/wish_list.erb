@@ -1,0 +1,16 @@
+<h1><%= @oil_worker.first_name %> <%= @oil_worker.last_name %> wants to go to: </h1>
+
+<ul>
+  <% @oil_worker.wish_rigs.each do |wish_rig| %>
+    <form action="/wish_lists/<%= wish_rig.id %>/delete" method="POST">
+
+    <p><a href="/rigs/<%= wish_rig.rig.id %>"><%= wish_rig.rig.name %></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn btn--click" type="submit" value="Delete" /></p>
+      </form>
+  <% end %>
+</ul>
+<p> </p>
+<p> </p>
+<p class="btn--wrapper">
+  <a class="btn btn--click" href="/wish_lists/new">Add rig to wish list</a>
+</p>

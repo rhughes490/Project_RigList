@@ -48,12 +48,13 @@ class Oil_company
     SqlRunner.run(sql)
    end
 
-   def rig()
+   def rigs()
     sql = "SELECT * FROM rigs
-    WHERE id = $1"
-    values = [@rig_id]
-    results = SqlRunner.run( sql, values )
-    return Rig.new( results.first )
+    WHERE oil_company_id = $1"
+    values = [@id]
+    rig_hashes = SqlRunner.run(sql, values)
+    rig_objects = rig_hashes.map { |rig_hash| Rig.new(rig_hash) }
+    return rig_objects
   end
 
    def self.find(id)

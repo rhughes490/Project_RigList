@@ -11,18 +11,27 @@ body {
   font-size: 18px;
 }
 
-h2 {
+h1 {
   text-align: center;
   margin-top: 50px;
   font-family: serif;
   font-size: 42px;
   font-weight: bold;
-  color: white;
+  color: limegreen;
+}
+
+h2 {
+  text-align: left;
+  margin-top: 0px;
+  font-family: serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
 }
 
 a, input[type="submit"] {
   display: inline-block;
-  background-color:limegreen;
+  background-color: whitesmoke;
   color:black;
   text-transform: none;
   font-weight: bold;
@@ -65,10 +74,9 @@ div {
   text-align: left;
   width: 50%;
   margin: 0 auto;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 5px;
   border-radius: 5px;
-  border-bottom: solid 2px #ddd;
   margin-bottom: 30px;
 }
 

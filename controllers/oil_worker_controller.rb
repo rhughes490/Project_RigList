@@ -21,3 +21,8 @@ get '/oil_workers/:id' do
   @oil_worker = Oil_worker.find(params['id'].to_i)
   erb( :"oil_workers/show" )
 end
+
+get '/oil_workers/:id/wish_list' do
+  @oil_worker = Oil_worker.find(params['id'].to_i)
+  erb( :"oil_workers/wish_list" )
+end

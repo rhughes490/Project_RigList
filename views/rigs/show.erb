@@ -2,10 +2,10 @@
 
 <p>Type: <%= @rig.type %></p>
 
-<h3>Oil Workers:</h3>
+<h2>Oil Workers:</h2>
 
-<ul>
+<h2>
   <% @rig.oil_workers.each do |oil_worker| %>
   <p><%= oil_worker.first_name %> &nbsp; <%= oil_worker.last_name %></p>
   <% end %>
-</ul>
+</h2>

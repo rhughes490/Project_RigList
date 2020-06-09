@@ -1,9 +1,5 @@
 <h1>Oil Companies</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/oil_companys/new">Add an Oil Company</a>
-</p>
-
 <table>
   <tr>
     <th>Name</th>
@@ -17,12 +13,17 @@
       <td><%= oil_company.type %></td>
      <td>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
         <td> <p> <form action="/oil_companys/<%= oil_company.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="Delete" />
+        <input class="btn btn--click" type="submit" value="Delete" />
       </form> </p> </td>
 
       <td> <p> <a href="/oil_companys/<%= oil_company.id %>/update">Update</a> </p> </td>
-
-    
   </tr>
   <% end %>
+  <tr>
+    <th>
+    <p class="btn--wrapper">
+      <a class="btn btn--click" href="/oil_companys/new">Add an Oil Company</a>
+    </p>
+    </th>
+  </tr>
 </table>

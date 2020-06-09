@@ -1,7 +1,7 @@
 <h1>Wish Lists</h1>
 
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/wish_lists/new">Add rig to wish list</a>
+  <a class="btn btn--click" href="/wish_lists/new">Add rig to wish list</a>
 </p>
 
 <ul>
@@ -10,7 +10,7 @@
   <p> <%= wish_list.oil_worker.first_name %> <%= wish_list.oil_worker.last_name %> wants to go to <%= wish_list.rig.name %> </p>
     <p>
       <form action="/wish_lists/<%= wish_list.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
+        <input class="btn btn--click" type="submit" value="delete" />
       </form>
     </p>
   </li>

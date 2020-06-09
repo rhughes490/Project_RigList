@@ -20,10 +20,10 @@ end
 post '/flights' do
   flight = Flight.new(params)
   flight.save
-  redirect to("/flights")
+  redirect to("/oil_workers")
 end
 
 post '/flights/:id/delete' do
   Flight.delete(params[:id])
-  redirect to("/flights")
+  redirect to("/oil_workers")
 end
