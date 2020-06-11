@@ -1,10 +1,15 @@
 <h1><%= @oil_company.name %></h1>
 
-<h3>Type: <%= @oil_company.type %></h3>
+<h2>Type: <%= @oil_company.type %></h2>
 
-<h3>Rigs Operated:</h3>
-<ul>
-  <% @oil_company.rigs.each do |rig| %>
-  <p><%=  rig.name %></p>
-  <% end %>
-</ul>
+<hr>
+
+<h2>Rigs Operated:</h2>
+
+<h2>
+  <ul>
+    <% @oil_company.rigs.each do |rig| %>
+    <p><%=  rig.name %></p>
+    <% end %>
+  </ul>
+</h2>

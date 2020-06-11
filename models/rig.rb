@@ -82,4 +82,11 @@ end
     return Rig.new( results.first )
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM rigs
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
 end

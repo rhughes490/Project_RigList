@@ -77,4 +77,11 @@ class Oil_company
     return oil_company_data.map { |oil_company| Oil_company.new(oil_company) }
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM oil_companys
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
 end

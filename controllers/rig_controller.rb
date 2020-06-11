@@ -17,6 +17,7 @@ end
 
 get '/rigs/:id' do
   @rig = Rig.find(params['id'].to_i)
+  @rigs = Rig.all()
   erb(:"rigs/show")
 end
 

@@ -1,21 +1,23 @@
-<h1><%= @oil_worker.first_name %> <%= @oil_worker.last_name %> has been to: </h1>
+<h1><%= @oil_worker.first_name %> <%= @oil_worker.last_name %></h1> 
 
+<h3>
+  <%= @oil_worker.first_name %> has been on
+  <%= @oil_worker.rigs.length %> trips and has travelled
+  <%= @oil_worker.distance_travelled*2 %> miles. That's
+    <%= sprintf("%.2f", @oil_worker.distance_travelled/137.to_f) %> times the length of Scotland!
+    <img src="/images/scotland.png" alt="Scotland" width="60" height="40">
+</h3>
+
+<p>
+<a class="btn btn--click" href="/flights/new">Record a flight</a> 
+<a href="/oil_workers/<%= @oil_worker.id %>/wish_list">View Wish List</a>
+</p> 
+
+<h2><%= @oil_worker.first_name %> has been to: </h2>
+
+<h2>
 <ul>
   <% @oil_worker.rigs.each do |rig| %>
      <p><a href="/rigs/<%= rig.id %>"><%= rig.name %></a></p>
   <% end %>
 </ul>
-
-<p class="btn--wrapper">
-  <a class="btn btn--click" href="/flights/new">Record a flight</a>
-</p>
-
-<h3>
-  <%= @oil_worker.first_name %> has travelled
-  <% @oil_worker.rigs.each do |rig| %>
-     <%total_distance = total_distance + rig.distance %>
-       <%=total_distance%> miles
-  <% end %>
-</h3>
-
-<p> <a href="/oil_workers/<%= @oil_worker.id %>/wish_list">Wish List</a> </p>

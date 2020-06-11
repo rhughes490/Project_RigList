@@ -1,12 +1,15 @@
-<h1>Flights</h1>
+<h1>Flight Tracker</h1>
 
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/flights/new">Record a flight</a>
 </p>
 
 <ul>
-  <% for flight in @flights %>
-  <p> <%= flight.oil_worker.first_name %> <%= flight.oil_worker.last_name %> has been on the <%= flight.rig.name %> </p>
+  <% for flight in @flights.reverse %>
+    <p> 
+      <%= flight.oil_worker.first_name %> 
+      <%= flight.oil_worker.last_name %> to the 
+      <%= flight.rig.name %> </p>
     <p>
       <form action="/flights/<%= flight.id %>/delete" method="POST">
         <input class="btn btn--click" type="submit" value="delete" />
